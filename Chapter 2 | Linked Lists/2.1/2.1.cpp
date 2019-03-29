@@ -1,4 +1,6 @@
-// Using Hash Table 
+// Using Hash Table
+// Time Complexity O(n)
+// Space Complexity O(n)
 void RemoveDuplicates(){
     unordered_set<int> Seen ; 
     Node* Current = Head ; 
@@ -18,6 +20,8 @@ void RemoveDuplicates(){
 }
 
 // Using 2 Loops
+// Time Complexity O(n^2)
+// Space Complexity O(1)
 void RemoveDuplicates()
 {
 	Node* Current = Head;
