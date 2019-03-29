@@ -1,5 +1,5 @@
 // Using Hash Table 
-void RemoveDuplicated(){
+void RemoveDuplicates(){
     unordered_set<int> Seen ; 
     Node* Current = Head ; 
     Node* Previous = nullptr ;
@@ -15,4 +15,34 @@ void RemoveDuplicated(){
         }
         Current = Previous->GetNext() ;
     }
+}
+
+// Using 2 Loops
+void RemoveDuplicates()
+{
+	Node* Current = Head;
+	Node* Previous = Head;
+	Node* CheckNext = Head->getNext();
+
+	while (Current->getNext() != nullptr) 
+	{
+		while (CheckNext != nullptr)
+		{
+			if (CheckNext->getItem() == Current->getItem())
+			{
+				Previous->setNext(CheckNext->getNext());
+				delete CheckNext;
+				CheckNext = Previous->getNext();
+				count--;
+			}
+			else
+			{
+				CheckNext = CheckNext->getNext();
+			}
+			Previous = Previous->getNext();
+		}
+		Current = Current->getNext();
+		Previous = Current;
+		CheckNext = Current->getNext();
+	}
 }
