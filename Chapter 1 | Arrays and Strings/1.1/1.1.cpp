@@ -1,3 +1,12 @@
+/*Author : Abdallah Hemdan */
+/* ___   __
+* |\  \|\  \
+* \ \  \_\  \
+*  \ \   ___ \emdan
+*   \ \  \\ \ \
+*    \ \__\\ \_\
+*     \|__| \|__|
+*/
 #include <iostream>
 #include <algorithm>
 
