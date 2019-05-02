@@ -10,6 +10,46 @@
 #include <iostream>
 using namespace std;
 
+
+// Solution 1
+// I will add Min var with each node of the stack whick store the minimum element before our current element
+typedef struct Node {
+	int Value, Min; 
+}Node;
+
+class StackWithMin_2 {
+private:
+	Node *Arr;
+	int Curr;
+public:
+	StackWithMin_2(int size = 1000) {
+		Arr = new Node[size];
+		Arr[0].Min = INT_MAX;
+		Curr = 0;
+	}
+	~StackWithMin_2() {
+		delete[] Arr;
+	}
+	void Push(int Value) {
+		Arr[++Curr].Value = Value;
+		if (Value<Arr[Curr - 1].Min) Arr[Curr].Min = Value;
+		else Arr[Curr].Min = Arr[Curr - 1].Min;
+	}
+	void Pop() {
+		--Curr;
+	}
+	int top() {
+		return Arr[Curr].Value;
+	}
+	bool empty() {
+		return Curr == 0;
+	}
+	int Min() {
+		return Arr[Curr].Min;
+	}
+};
+
+
 class Stack {
  private:
   int* Arr;
